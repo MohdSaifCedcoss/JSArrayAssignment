@@ -1,5 +1,4 @@
-function addData() {
-  let mobile = [
+let mobile = [
     {
       company: "Samsung",
       model: "Galaxy",
@@ -31,7 +30,7 @@ function addData() {
       price: 25000,
     },
   ];
-
+function addData() {
   let comp = document.getElementById("comp").value;
   let mod = document.getElementById("mod").value;
   let memo = document.getElementById("memo").value;

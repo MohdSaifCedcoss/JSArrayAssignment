@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 5</title>
+  </head>
+  <body>
+    <div>
+      <select name="Mobiles" id="prodName">
+        <option value="selPro">-Select Product-</option>
+        <option value="samsung">Samsung</option>
+        <option value="nokia">Nokia</option>
+        <option value="xiaomi">Xiaomi</option>
+        <option value="motorola">Motorola</option>
+        <option value="apple">Apple</option>
+      </select>
+      <input type="text" id="quantity" placeholder="Quantity" />
+      <input type="button" onclick="addPro()" value="Add" />
+      <input type="button" onclick="generateBill()" value="Generate Bill" />
+    </div>
+    <p id="show"></p>
+    <div>
+      <button><a href="/src/index.html">Home</a></button>
+    </div>
+    <script src="task5.js"></script>
+  </body>
+</html>
