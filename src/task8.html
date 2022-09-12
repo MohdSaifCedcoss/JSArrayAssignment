@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 8</title>
+  </head>
+  <body>
+    <p id="show"></p>
+
+    <div style="display: inline">
+      <select name="selPro" id="selModel" required>
+        <option value="selMod">-Select Model-</option>
+        <option value="Samsung">Samsung Galaxy</option>
+        <option value="Nokia">Nokia S730</option>
+        <option value="Xiaomi">Xiaomi Note</option>
+        <option value="Moto">Motorola G10</option>
+        <option value="Apple">Apple S12</option>
+      </select>
+      <input type="text" id="quantity" placeholder="Quantity" />
+      <input type="button" onclick="updateQuantity()" value="Update" />
+    </div>
+    <br><br>
+    <div>
+      <button><a href="/src/index.html">Home</a></button>
+    </div>
+    <script src="task8.js"></script>
+  </body>
+</html>
