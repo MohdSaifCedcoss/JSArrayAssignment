@@ -59,31 +59,50 @@ function showTable() {
     "<br><input type='button' onclick='delData()' value='Delete'>";
 }
 function delData() {
-    let i=0;
-    index=[];
+  let i = 0;
+  index = [];
   let samCheck = document.getElementById("samsung");
-  let nolCheck = document.getElementById("nokia");
+  let nokCheck = document.getElementById("nokia");
   let xiaCheck = document.getElementById("xiaomi");
   let motoCheck = document.getElementById("moto");
   let appCheck = document.getElementById("apple");
-  console.log(samCheck.checked);
+
   if (samCheck.checked == true) {
-    index[i++]=0;
+    mobile.splice(0, 1);
   }
-  if (nolCheck.checked == true) {
-    index[i++]=1;
+  if (nokCheck.checked == true) {
+    if (samCheck.checked == true) {
+      mobile.splice(0, 1);
+    } else {
+      mobile.splice(1, 1);
+    }
   }
   if (xiaCheck.checked == true) {
-    index[i++]=2;
+    if (samCheck.checked == true && nokCheck.checked == true) {
+      mobile.splice(0, 1);
+    } else if (samCheck.checked == true || nokCheck.checked == true) {
+      mobile.splice(1, 1);
+    } else {
+      mobile.splice(2, 1);
+    }
   }
   if (motoCheck.checked == true) {
-    index[i++]=3;
+    if (
+      samCheck.checked == true &&
+      nokCheck.checked == true &&
+      xiaCheck.checked == true
+    ) {
+      mobile.splice(0, 1);
+    } else if (samCheck.checked == true || nokCheck.checked == true) {
+      mobile.splice(1, 1);
+    } else if (xiaCheck.checked == true) {
+      mobile.splice(2, 1);
+    } else {
+      mobile.splice(3, 1);
+    }
   }
   if (appCheck.checked == true) {
-    index[i++]=4;
-  }
-  for(let i=0;i<index.length;i++){
-    var del=delete mobile[i];
+    mobile.pop();
   }
   console.log(index);
   let table =
@@ -99,7 +118,7 @@ function delData() {
       "</td><td>" +
       e.price +
       "</td><td>" +
-    "</tr>";
+      "</tr>";
   });
   table += "</table>";
   document.getElementById("deleteData").innerHTML = table;
