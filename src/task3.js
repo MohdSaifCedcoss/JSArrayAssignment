@@ -49,8 +49,7 @@ function sorts() {
     mobile.sort((a, b) => {
       return b.price - a.price;
     });
-  } 
-  else if (order == "ascending" && sortBy == "company") {
+  } else if (order == "ascending" && sortBy == "company") {
     mobile.sort((a, b) => {
       let fa = a.company.toLowerCase(),
         fb = b.company.toLowerCase();
@@ -63,48 +62,45 @@ function sorts() {
       }
       return 0;
     });
-  } 
-  else if (order == "descending" && sortBy == "company") {
+  } else if (order == "descending" && sortBy == "company") {
     mobile.sort((a, b) => {
-        let fa = a.company.toLowerCase(),
-          fb = b.company.toLowerCase();
-  
-        if (fa > fb) {
-          return -1;
-        }
-        if (fa < fb) {
-          return 1;
-        }
-        return 0;
-      });
-  }
-  else if (order == "ascending" && sortBy == "model") {
+      let fa = a.company.toLowerCase(),
+        fb = b.company.toLowerCase();
+
+      if (fa > fb) {
+        return -1;
+      }
+      if (fa < fb) {
+        return 1;
+      }
+      return 0;
+    });
+  } else if (order == "ascending" && sortBy == "model") {
     mobile.sort((a, b) => {
-        let fa = a.model.toLowerCase(),
-          fb = b.model.toLowerCase();
-  
-        if (fa < fb) {
-          return -1;
-        }
-        if (fa > fb) {
-          return 1;
-        }
-        return 0;
-      });
-  }
-  else if (order == "descending" && sortBy == "model") {
+      let fa = a.model.toLowerCase(),
+        fb = b.model.toLowerCase();
+
+      if (fa < fb) {
+        return -1;
+      }
+      if (fa > fb) {
+        return 1;
+      }
+      return 0;
+    });
+  } else if (order == "descending" && sortBy == "model") {
     mobile.sort((a, b) => {
-        let fa = a.company.toLowerCase(),
-          fb = b.company.toLowerCase();
-  
-        if (fa > fb) {
-          return -1;
-        }
-        if (fa < fb) {
-          return 1;
-        }
-        return 0;
-      });
+      let fa = a.model.toLowerCase(),
+        fb = b.model.toLowerCase();
+
+      if (fa > fb) {
+        return -1;
+      }
+      if (fa < fb) {
+        return 1;
+      }
+      return 0;
+    });
   }
   let table =
     "<table><tr><th>Company</th><th>Model</th><th>Memory(GB)</th><th>Price</th></tr>";
